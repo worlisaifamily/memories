@@ -1,0 +1,262 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f5e6ca, #f1c27d);
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #8b0000;
+    padding: 10px 20px;
+    color: lightgoldenrodyellow;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 50px; /* Match the image height */
+}
+
+header img {
+    width: 55px;
+    height: 60px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Section */
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: #8b0000;
+    border-bottom: 3px solid #8b0000;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Beautified Filters */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filters input,
+.filters select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 90%;
+    max-width: 250px;
+    transition: 0.3s ease-in-out;
+}
+
+.filters input:focus,
+.filters select:focus {
+    border-color: #8b0000;
+    box-shadow: 0 0 8px rgba(139, 0, 0, 0.3);
+}
+
+.filters button {
+    padding: 12px 15px;
+    background: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.filters button:hover {
+    background: #a52a2a;
+}
+
+/* Grid Layout for Events */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* 
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #8b0000;
+    font-size: 18px;
+}
+*/
+
+.card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+	height: 280px; /* fixed height */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Event title hover effect */
+.card h3 {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Change title color on hover */
+.card:hover h3 {
+    color: #d9534f; /* Sai Baba red */
+}
+
+/* Change title color when clicked */
+.card:active h3 {
+    color: #5bc0de; /* Light blue */
+}
+
+/* Smooth transition effect */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+	height: 200px; /* fixed height for image */
+    object-fit: cover; /* important: makes image fill the container without distortion */
+   
+}
+
+.card:hover img {
+    opacity: 0.9;
+}
+
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    border: none;
+    background: #8b0000;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.pagination button:hover {
+    background: #a52a2a;
+}
+
+.pagination span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters input,
+    .filters select,
+    .filters button {
+        max-width: 100%;
+    }
+}
+
+/*
+ const events = [
+        { title: "Gayatri Havan at the residence of Shri Pothu Sudarshan Garu", year: "2025", month: "01", image: "gayatridevi.jpg", link: "https://photos.app.goo.gl/AHZgPBvEhop9j79n7" },
+        { title: "Narayan Seva", year: "2025", month: "01", image: "Narayan.jpg", link: "https://photos.app.goo.gl/1MbPTnCDHJCtcAGh6" },
+        { title: "Ekadasha Rudrabhishekam", year: "2025", month: "02", image: "ekadasharudram.jpg", link: "https://photos.app.goo.gl/5JqQ6PhmQ9jco3qu9" },
+        { title: "Narayan Seva", year: "2025", month: "02", image: "Narayan.jpg", link: "https://photos.app.goo.gl/gUPGrDNuoavw4nod9" },
+        { title: "Gayatri Havan at Smt Indira Gone’s residence", year: "2025", month: "02", image: "gayatridevi.jpg", link: "https://photos.app.goo.gl/jtH9Ng4vtfBimXEeA" },
+        { title: "Residential Bhajans  at Balvikas child – Sriyan Siripuram", year: "2025", month: "02", image: "saibhajan.jpg", link: "https://photos.app.goo.gl/4vF6YofH6ZTvhFH78" },
+    ];
+    */
