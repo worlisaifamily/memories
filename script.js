@@ -516,7 +516,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 (monthFilter.value === "" || event.month === monthFilter.value) &&
                 (searchInput.value === "" || event.title.toLowerCase().includes(searchInput.value.toLowerCase()))
             );
-            );
         });
     }
 
