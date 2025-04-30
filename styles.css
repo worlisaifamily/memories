@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: system-ui;
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #f5e6ca, #f1c27d);
@@ -60,9 +60,9 @@ main {
 
 h1 {
     color: #8b0000;
-    border-bottom: 3px solid #8b0000;
+    border-bottom: 1px solid #f3bb8e;
     display: inline-block;
-    padding-bottom: 5px;
+    /* padding-bottom: 0px; */
 }
 
 /* Beautified Filters */
@@ -75,7 +75,7 @@ h1 {
     margin-bottom: 20px;
     background: white;
     padding: 15px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -114,7 +114,7 @@ h1 {
 .collection-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 8px;
     padding: 10px;
 }
 
@@ -152,13 +152,17 @@ h1 {
 */
 
 .card {
+    text-overflow: ellipsis;
     display: block;
     text-decoration: none;
     color: inherit;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
-	height: 280px; /* fixed height */
+    height: 280px; /* fixed height */
+    border-style: solid;
+    border-color: #670000;
+    background-color: ghostwhite;
 }
 
 .card:hover {
@@ -167,10 +171,13 @@ h1 {
 
 /* Event title hover effect */
 .card h3 {
+    padding: 0px 8px 0px 8px;
     text-align: center;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 5px;
     transition: color 0.3s ease-in-out;
+    overflow: auto;
+    text-overflow: ellipsis;
 }
 
 /* Change title color on hover */
@@ -187,11 +194,12 @@ h1 {
 .card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     transition: opacity 0.3s ease-in-out;
-	height: 200px; /* fixed height for image */
+    height: 200px; /* fixed height for image */
     object-fit: cover; /* important: makes image fill the container without distortion */
-   
+    filter: contrast(1.2) brightness(1.1);
+    text-overflow: ellipsis;
 }
 
 .card:hover img {
@@ -256,7 +264,77 @@ h1 {
         { title: "Narayan Seva", year: "2025", month: "01", image: "Narayan.jpg", link: "https://photos.app.goo.gl/1MbPTnCDHJCtcAGh6" },
         { title: "Ekadasha Rudrabhishekam", year: "2025", month: "02", image: "ekadasharudram.jpg", link: "https://photos.app.goo.gl/5JqQ6PhmQ9jco3qu9" },
         { title: "Narayan Seva", year: "2025", month: "02", image: "Narayan.jpg", link: "https://photos.app.goo.gl/gUPGrDNuoavw4nod9" },
-        { title: "Gayatri Havan at Smt Indira Gone’s residence", year: "2025", month: "02", image: "gayatridevi.jpg", link: "https://photos.app.goo.gl/jtH9Ng4vtfBimXEeA" },
-        { title: "Residential Bhajans  at Balvikas child – Sriyan Siripuram", year: "2025", month: "02", image: "saibhajan.jpg", link: "https://photos.app.goo.gl/4vF6YofH6ZTvhFH78" },
+        { title: "Gayatri Havan at Smt Indira GoneÃ¢â‚¬â„¢s residence", year: "2025", month: "02", image: "gayatridevi.jpg", link: "https://photos.app.goo.gl/jtH9Ng4vtfBimXEeA" },
+        { title: "Residential Bhajans  at Balvikas child Ã¢â‚¬â€œ Sriyan Siripuram", year: "2025", month: "02", image: "saibhajan.jpg", link: "https://photos.app.goo.gl/4vF6YofH6ZTvhFH78" },
     ];
     */
+	
+.hero-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 400px; */
+    min-height: 6vw;
+    background-image: url(https://www.srisathyasai.org/pages/assets/img/sai-baba/his-life/his-life-banner1.jpg);
+    background-size: cover;
+    background-position: center;
+    /* border-radius: 0px 0px 160px 160px; */
+    overflow: hidden;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    .hero-nav__inner{
+        margin-top: 5px;
+        z-index:1;
+    }
+    h1{
+        color: #efefef;
+        font-size: 2.5vw;
+        margin: 0px;
+    }
+	h2{
+        color: #efefef;
+        font-size: 2vw;
+        text-align: center;
+        margin: 0px;
+    }
+    &:before{
+        content: "";
+        /* background: rgb(163 106 0); */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: background 500ms;
+    }
+    &.fixme{
+        &:before{
+            background: rgba(103,0, 0, 1);
+        };
+        z-index: 1;
+    }
+}
+
+.sarvadharma{
+		width: 10vw;
+		position: fixed;
+		top: 0.5vw;
+		left: 2.5vw;
+		z-index: 2;
+		width: 5vw;
+		overflow: hidden;
+}

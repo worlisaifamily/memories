@@ -516,7 +516,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 (monthFilter.value === "" || event.month === monthFilter.value) &&
                 (searchInput.value === "" || event.title.toLowerCase().includes(searchInput.value.toLowerCase()))
             );
-            );
+            
         });
     }
 
@@ -532,6 +532,29 @@ document.addEventListener("DOMContentLoaded", function () {
         currentPage = 1; // Reset to first page
         displayEvents(events);
     }
+
+var heroShinker = function() {
+    var hero = $('.hero-nav'),
+        heroHeight = $('.hero-nav').outerHeight(true);
+        $(hero).parent().css('padding-top', heroHeight);
+	
+	var heroTextH1=$('.head1');
+	
+    $(window).scroll(function() {
+        var scrollOffset = $(window).scrollTop();
+		
+        if (scrollOffset < heroHeight) {
+            $(hero).css('height', (heroHeight - scrollOffset));
+        }
+		$(heroTextH1).css('font-size',(hero.outerHeight/50));
+        if (scrollOffset > (heroHeight - 115)) {
+            hero.addClass('fixme');
+        } else {
+            hero.removeClass('fixme');
+        };
+    });
+}
+heroShinker();
 
     // Attach event listeners
     yearFilter.addEventListener("change", filterCards);
