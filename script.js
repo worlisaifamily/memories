@@ -539,19 +539,26 @@ var heroShinker = function() {
         $(hero).parent().css('padding-top', heroHeight);
 	
 	var heroTextH1=$('.head1');
-	
+	var fsMin=77;//heroTextH1.fontsize();
+	var fsMin=77;//heroTextH1.fontsize();
+	var fsMax=100;
     $(window).scroll(function() {
         var scrollOffset = $(window).scrollTop();
 		
         if (scrollOffset < heroHeight) {
             $(hero).css('height', (heroHeight - scrollOffset));
         }
-		$(heroTextH1).css('font-size',(hero.outerHeight/50));
+		
         if (scrollOffset > (heroHeight - 115)) {
             hero.addClass('fixme');
         } else {
             hero.removeClass('fixme');
         };
+		if (heroTextH1.fontsize()>fsMin)
+		{
+			
+			$(heroTextH1).css('font-size',fsMax-scrollOffset);
+		}
     });
 }
 heroShinker();
