@@ -515,8 +515,9 @@ heroShinker();
 const h1 = document.querySelector('.head1');
 const h2 = document.querySelector('.head2');
 const logo1 = document.querySelector('.sarvadharma');
+const logo2 = document.querySelector('.s100bday');
     const minFontSize = vwToPx(2.5); // in pixels
-    const maxFontSize = vwToPx(5); // in pixels
+    const maxFontSize = vwToPx(8); // in pixels
     const maxScroll = 500;  // scroll threshold for font size to reach min/max
 	
 	const minFontSizeH2 = vwToPx(1.5); // in pixels
@@ -524,6 +525,9 @@ const logo1 = document.querySelector('.sarvadharma');
     
 	const minwidthLogo1 = vwToPx(5); // in pixels
     const maxwidthLogo1 = vwToPx(8); // in pixels
+	
+	const minwidthLogo2 = vwToPx(4.5); // in pixels
+    const maxwidthLogo2 = vwToPx(8); // in pixels
 	
     window.addEventListener('scroll', () => {
       var scrollY = window.scrollY;
@@ -539,7 +543,12 @@ const logo1 = document.querySelector('.sarvadharma');
 	  scrollY = window.scrollY;
       ratio = Math.min(scrollY / maxScroll, 1); // Clamp between 0 and 1
       newSize = maxwidthLogo1 - (maxwidthLogo1 - minwidthLogo1) * ratio;
-      logo1.style.width = `${newSize}px`;
+      logo1.style.width = `${newSize}px`; 
+	  
+	  scrollY = window.scrollY;
+      ratio = Math.min(scrollY / maxScroll, 1); // Clamp between 0 and 1
+      newSize = maxwidthLogo2 - (maxwidthLogo2 - minwidthLogo2) * ratio;
+      logo2.style.width = `${newSize}px`;
 	  
     });
     // Attach event listeners

@@ -334,3 +334,13 @@ h1 {
     overflow: hidden;
     transform: translateX(-50%);
 }
+
+.s100bday{ 
+    position: fixed;
+    top: 0.5vw;
+    right: 4.5vw;
+    z-index: 2;
+    width: 8vw;
+    overflow: hidden;
+    transform: translateX(50%);
+}
