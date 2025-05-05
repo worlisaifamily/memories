@@ -344,3 +344,19 @@ h1 {
     overflow: hidden;
     transform: translateX(50%);
 }
+
+footer {
+    background-color:  rgb(155 99 69);
+    color: lightgoldenrodyellow;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 16px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 14px;
+        padding: 12px 8px;
+    }
+}
